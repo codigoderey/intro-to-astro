@@ -1,0 +1,47 @@
+---
+export interface Props {
+  cardTitle: string,
+  cardBody: string,
+  cardIcon: string
+}
+
+const {cardTitle, cardBody, cardIcon} = Astro.props
+---
+
+<div class="card">
+  <div class="card_title">{cardTitle}</div>
+  <div class="card_body">{cardBody}</div>
+  <button class="card_button">
+    Ver
+    <i class={`${cardIcon} fa-2x`}></i>
+  </button>
+</div>
+
+<style>
+  .card{
+    min-width: 500px;
+    max-width: 300px;
+    border: 1px solid gray;
+    margin: 1rem;
+  }
+
+  .card_title{
+    background-color: #efefef;
+    border-bottom: 1px solid darkgray;
+    padding: 1rem
+  }
+
+  .card_body{
+    padding: 1rem;
+  }
+
+  .card_button{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    padding: 10px 30px;
+    width: 100%;
+  }
+</style>
